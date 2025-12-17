@@ -3,7 +3,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo</title>
-    <link rel="stylesheet"type="text/css" href="signup.css">
+    <script type="text/javascript">
+        function validate(){
+    if(document.myform.firstname.value==""){
+        alert("please enter your first name");
+        document.myform.firstname.focus();
+        return false;
+    }
+    if(document.myfrom.Lastname.value==""){
+        alert("please enter your lastname");
+        document.myform.Lastname.focus();
+        return false;
+    }
+    if(document.myform.EmailAddress.value==""){
+        alert("please enter your Email address");
+        document.myform.EmailAddress.focus();
+        return false;
+    }
+    if(document.myform.SetApassword.value==""){
+        alert("please set a password")
+        document.myform.SetApassword.focus();
+        return false;
+    }
+    if(document.myform.emailAddress.value==""){
+        alert("please enter the email ")
+        document.myform.emailAddress.focus();
+        return false;
+    }
+    if(document.myform.Password.value=""){
+        alert("please enter your password")
+        document.myform.Password.focus();
+        return false;
+    }
+    return(true);
+
+}
+    </script>
   </head>
   <body>
     <a href="./Login&Register/index.html">Signup Now!</a>
@@ -12,28 +47,37 @@
     <li><a href="log in ">log in </a></li>
 </ul>
 <h1>Sign up for free</h1>
-<div class="Main">
-    <div class="signup"><form action="sign up">
-    <label>first name *</label>
-    <input type="text"><br>
-    <label>Last name *</label>
-    <input type="text"><br>
-    <label>Email Address *</label>
-    <input type="email"><br>
-    <label>Set A password *</label>
-    <input type="password"><br>
-    <button>Get started</button>
-</form></div>
-<div class="log in "><form action="log in ">
+<form name="myform" onsubmit="return(validate());">
+    <form id="signupForm">
+    <label>firstname </label>
+    <input type="text" required><br>
+
+    <label>Lastname </label>
+    <input type="text" required><br>
+
+    <label>EmailAddress </label>
+    <input type="email" required><br>
+
+    <label>SetApassword </label>
+    <input type="password" required><br>
+
+    <button type="submit">Getstarted</button>
+    </form>
     <h1>Welcome back!</h1>
-    <label>Email Address*</label>
-    <input type="email"><br>
-    <label>Passsword*</label>
-    <input type="password"><br>
+
+    <form id="loginForm">
+    <label>emailAddress</label>
+    <input type="email" required><br>
+
+    <label>Passsword</label>
+    <input type="password" required><br>
+
     <a href="">forget password?</a><br>
-    <button>log in </button>
-</form></div>
-</div>
+
+    <button type="submit">log in </button>
+    </form>
+</form>
+
 
 
 
