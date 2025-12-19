@@ -1,87 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo</title>
-    <script type="text/javascript">
-      function validate(){
-        // form name = myform (signup)
-        var f = document.myform;
-        if(f.firstname.value.trim() == ""){
-            alert("please enter your first name");
-            f.firstname.focus();
-            return false;
-        }
-        if(f.lastname.value.trim() == ""){
-            alert("please enter your lastname");
-            f.lastname.focus();
-            return false;
-        }
-        if(f.emailAddress.value.trim() == ""){
-            alert("please enter your Email address");
-            f.emailAddress.focus();
-            return false;
-        }
-        if(f.SetApassword.value.trim() == ""){
-            alert("please set a password");
-            f.SetApassword.focus();
-            return false;
-        }
-        return true;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo</title>
+
+  <script>
+    function validateSignup() {
+      var f = document.getElementById("signupForm");
+
+      if (f.firstname.value.trim() === "") {
+        alert("Please enter your first name");
+        f.firstname.focus();
+        return false;
       }
 
-      function validateLogin(){
-        var f = document.loginform;
-        if(f.email.value.trim() == ""){
-            alert("please enter the email");
-            f.email.focus();
-            return false;
-        }
-        if(f.password.value.trim() == ""){
-            alert("please enter your password");
-            f.password.focus();
-            return false;
-        }
-        return true;
+      if (f.lastname.value.trim() === "") {
+        alert("Please enter your last name");
+        f.lastname.focus();
+        return false;
       }
-    </script>
-  </head>
-  <body>
-    <a href="./Login&Register/index.html">Signup Now!</a>
-    <ul>
-      <li><a href="#signup">sign up </a></li>
-      <li><a href="#login">log in </a></li>
-    </ul>
 
-    <h1 id="signup">Sign up for free</h1>
-    <form name="myform" id="signupForm" action="Register.php" method="post" onsubmit="return validate();">
-      <label>firstname </label>
-      <input type="text" name="firstname" required><br>
+      if (f.email.value.trim() === "") {
+        alert("Please enter your email");
+        f.email.focus();
+        return false;
+      }
 
-      <label>Lastname </label>
-      <input type="text" name="lastname" required><br>
+      if (f.password.value.trim() === "") {
+        alert("Please enter your password");
+        f.password.focus();
+        return false;
+      }
 
-      <label>EmailAddress </label>
-      <input type="email" name="emailAddress" required><br>
+      return true;
+    }
 
-      <label>SetApassword </label>
-      <input type="password" name="SetApassword" required><br>
+    function validateLogin() {
+      var f = document.getElementById("loginForm");
 
-      <button type="submit">Getstarted</button>
-    </form>
+      if (f.email.value.trim() === "") {
+        alert("Please enter your email");
+        f.email.focus();
+        return false;
+      }
 
-    <h1 id="login">Welcome back!</h1>
-    <form name="loginform" id="loginForm" action="login.php" method="post" onsubmit="return validateLogin();">
-      <label>EmailAddress</label>
-      <input type="email" name="email" required><br>
+      if (f.password.value.trim() === "") {
+        alert("Please enter your password");
+        f.password.focus();
+        return false;
+      }
 
-      <label>Passsword</label>
-      <input type="password" name="password" required><br>
+      return true;
+    }
+  </script>
+</head>
 
-      <a href="">forget password?</a><br>
+<body>
 
-      <button type="submit">log in </button>
-    </form>
-  </body>
+  <ul>
+    <li><a href="#signup">Sign up</a></li>
+    <li><a href="#login">Log in</a></li>
+  </ul>
+
+  <!-- SIGNUP -->
+  <h1 id="signup">Sign up for free</h1>
+  <form id="signupForm" action="Register.php" method="post" onsubmit="return validateSignup();">
+    <label>First name</label>
+    <input type="text" name="firstname"><br>
+
+    <label>Last name</label>
+    <input type="text" name="lastname"><br>
+
+    <label>Email</label>
+    <input type="email" name="email"><br>
+
+    <label>Password</label>
+    <input type="password" name="password"><br>
+
+    <button type="submit">Get Started</button>
+  </form>
+
+  <!-- LOGIN -->
+  <h1 id="login">Welcome back!</h1>
+  <form id="loginForm" action="login.php" method="post" onsubmit="return validateLogin();">
+    <label>Email</label>
+    <input type="email" name="email"><br>
+
+    <label>Password</label>
+    <input type="password" name="password"><br>
+
+    <a href="#">Forget password?</a><br>
+
+    <button type="submit">Log in</button>
+  </form>
+
+</body>
 </html>
