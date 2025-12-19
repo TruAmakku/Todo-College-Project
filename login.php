@@ -3,7 +3,7 @@ include "db.php";
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: index.html");
+    header("Location: main.html");
     exit;
 }
 

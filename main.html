@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <script type="text/javascript">
+      function validate(){
+        // form name = myform (signup)
+        var f = document.myform;
+        if(f.firstname.value.trim() == ""){
+            alert("please enter your first name");
+            f.firstname.focus();
+            return false;
+        }
+        if(f.lastname.value.trim() == ""){
+            alert("please enter your lastname");
+            f.lastname.focus();
+            return false;
+        }
+        if(f.emailAddress.value.trim() == ""){
+            alert("please enter your Email address");
+            f.emailAddress.focus();
+            return false;
+        }
+        if(f.SetApassword.value.trim() == ""){
+            alert("please set a password");
+            f.SetApassword.focus();
+            return false;
+        }
+        return true;
+      }
+
+      function validateLogin(){
+        var f = document.loginform;
+        if(f.email.value.trim() == ""){
+            alert("please enter the email");
+            f.email.focus();
+            return false;
+        }
+        if(f.password.value.trim() == ""){
+            alert("please enter your password");
+            f.password.focus();
+            return false;
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <a href="./Login&Register/index.html">Signup Now!</a>
+    <ul>
+      <li><a href="#signup">sign up </a></li>
+      <li><a href="#login">log in </a></li>
+    </ul>
+
+    <h1 id="signup">Sign up for free</h1>
+    <form name="myform" id="signupForm" action="Register.php" method="post" onsubmit="return validate();">
+
+      <label>firstname </label>
+      <input type="text" name="firstname" required><br>
+
+      <label>Lastname </label>
+      <input type="text" name="lastname" required><br>
+
+      <label>EmailAddress </label>
+      <input type="email" name="email" required><br>
+
+      <label>SetApassword </label>
+      <input type="password" name="password" required><br>
+
+      <button type="submit">Getstarted</button>
+    </form>
+
+    <h1 id="login">Welcome back!</h1>
+    <form name="loginform" id="loginForm" action="login.php" method="post" onsubmit="return validateLogin();">
+      <label>EmailAddress</label>
+      <input type="email" name="email" required><br>
+
+      <label>Passsword</label>
+      <input type="password" name="password" required><br>
+
+      <a href="">forget password?</a><br>
+
+      <button type="submit">log in </button>
+    </form>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
