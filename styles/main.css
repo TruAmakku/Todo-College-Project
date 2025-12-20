@@ -3,6 +3,7 @@ body {
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -15,12 +16,24 @@ body {
   }
 }
 
-body button {
-  cursor: pointer;
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
 }
-body button:hover {
-  opacity: 0.7;
+
+.anim h1 {
+  animation: fade 0.5s;
 }
-body button:active {
-  opacity: 0.9;
+.anim p {
+  animation: fade 0.5s 0.5s backwards;
+}
+.anim a {
+  animation: fade 0.5s 1s backwards;
 }

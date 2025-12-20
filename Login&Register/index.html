@@ -1,2 +1,184 @@
-اذيك احتومه
-حبيبي 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniDo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../styles/signup.css" />
+    <script>
+      function showLogin() {
+        toggle("loginSection", "signupSection", "loginBtn", "signupBtn");
+      }
+
+      function showSignup() {
+        toggle("signupSection", "loginSection", "signupBtn", "loginBtn");
+      }
+
+      function toggle(showId, hideId, activeBtn, inactiveBtn) {
+        // visibility
+        document.getElementById(showId).classList.remove("hidden");
+        document.getElementById(hideId).classList.add("hidden");
+
+        // active
+        document.getElementById(activeBtn).classList.remove("bg-[#FFD1CC]");
+        document.getElementById(activeBtn).classList.add("bg-[#FF6F61]");
+
+        // inactive
+        document.getElementById(inactiveBtn).classList.remove("bg-[#FF6F61]");
+        document.getElementById(inactiveBtn).classList.add("bg-[#FFD1CC]");
+      }
+    </script>
+    <script>
+      function validate() {
+        var f = document.myform;
+
+        if (f.firstname.value.trim() === "") {
+          alert("Please enter your first name");
+          f.firstname.focus();
+          return false;
+        }
+        if (f.lastname.value.trim() === "") {
+          alert("Please enter your last name");
+          f.lastname.focus();
+          return false;
+        }
+        if (f.email.value.trim() === "") {
+          alert("Please enter your email");
+          f.email.focus();
+          return false;
+        }
+        if (f.password.value.trim() === "") {
+          alert("Please set a password");
+          f.password.focus();
+          return false;
+        }
+        return true;
+      }
+
+      function validateLogin() {
+        var f = document.loginform;
+
+        if (f.email.value.trim() === "") {
+          alert("Please enter your email");
+          f.email.focus();
+          return false;
+        }
+        if (f.password.value.trim() === "") {
+          alert("Please enter your password");
+          f.password.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex items-center justify-center gap-10">
+    <!-- SIGNUP -->
+    <div class="bg-[#FFB7B2] p-6 rounded-2xl shadow-lg w-100 text-[#4A1C1C]">
+      <div class="flex rounded-xl overflow-hidden mb-6">
+        <button
+          id="loginBtn"
+          onclick="showLogin()"
+          class="w-full p-3 font-semibold text-white bg-[#FFD1CC] transition-colors duration-300"
+        >
+          Login
+        </button>
+        <button
+          id="signupBtn"
+          onclick="showSignup()"
+          class="w-full p-3 font-semibold text-white bg-[#FF6F61] transition-colors duration-300"
+        >
+          Sign up
+        </button>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="loginSection" class="hidden">
+        <h1 class="text-2xl font-bold mb-4 text-center">Welcome back!</h1>
+
+        <form
+          name="loginform"
+          action="login.php"
+          method="post"
+          onsubmit="return validateLogin();"
+          class="space-y-3"
+        >
+          <input
+            class="w-full p-3 rounded-lg border border-[#FF9AA2] focus:outline-none focus:ring-2 focus:ring-[#FF6F91]"
+            type="email"
+            name="email"
+            placeholder="Email address"
+          />
+
+          <input
+            class="w-full p-3 rounded-lg border border-[#FF9AA2] focus:outline-none focus:ring-2 focus:ring-[#FF6F91]"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+
+          <a
+            href="#"
+            class="block text-sm text-[#FF4D6D] text-center hover:underline"
+          >
+            Forgot password?
+          </a>
+
+          <button
+            class="w-full py-3 rounded-lg bg-[#FF6F61] hover:bg-[#FF4D6D] text-white font-semibold"
+          >
+            Log in
+          </button>
+        </form>
+      </div>
+
+      <!-- SIGNUP -->
+      <div id="signupSection">
+        <h1 class="text-2xl font-bold mb-5 text-center">Sign up for free</h1>
+
+        <form
+          name="myform"
+          action="Register.php"
+          method="post"
+          onsubmit="return validate();"
+          class="space-y-3"
+        >
+          <input
+            class="w-full p-3 rounded-lg border border-[#FF9AA2] focus:outline-none focus:ring-2 focus:ring-[#FF6F91]"
+            type="text"
+            name="firstname"
+            placeholder="First name"
+          />
+
+          <input
+            class="w-full p-3 rounded-lg border border-[#FF9AA2] focus:outline-none focus:ring-2 focus:ring-[#FF6F91]"
+            type="text"
+            name="lastname"
+            placeholder="Last name"
+          />
+
+          <input
+            class="w-full p-3 rounded-lg border border-[#FF9AA2] focus:outline-none focus:ring-2 focus:ring-[#FF6F91]"
+            type="email"
+            name="email"
+            placeholder="Email address"
+          />
+
+          <input
+            class="w-full p-3 rounded-lg border border-[#FF9AA2] focus:outline-none focus:ring-2 focus:ring-[#FF6F91]"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+
+          <button
+            class="w-full py-3 rounded-lg bg-[#FF6F61] text-white font-semibold hover:bg-[#FF4D6D]"
+          >
+            Get Started
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
