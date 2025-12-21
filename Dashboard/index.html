@@ -5,10 +5,22 @@
     <title>MiniDo</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="">
-    <div class="w-full bg-black h-14">0</div>
+  <body class="h-screen overflow-y-hidden">
+    <div class="w-full flex justify-between px-2 py-4 items-center">
+      <h1 class="text-4xl">Mini<span>Do</span></h1>
+      <div class="flex flex-col text-sm">
+        <p>Wednesdeay</p>
+        <p>DD/MM/YYYY</p>
+      </div>
+    </div>
     <div class="flex h-full">
-      <div class="bg-gray-200 w-100">1</div>
+      <div class="bg-gray-200 w-100">
+        <div>
+          <p>Ammar Elhregy</p>
+          <p>truammar18@gmail.com</p>
+        </div>
+        <div><button>New Task</button><button>Logout</button></div>
+      </div>
       <div class="bg-gray-500 w-full">2</div>
     </div>
   </body>
