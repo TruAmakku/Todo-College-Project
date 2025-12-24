@@ -131,11 +131,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                             type="email" 
                             name="email" 
                             required 
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                            class="w-full px-4 py-2 rounded-lg border
+                                    border-[#FF9AA2]
+                                    focus:outline-none
+                                    focus:border-[#FF6F91]
+                                    focus:ring-2
+                                    focus:ring-[#FF6F91]/20 border-[#FF9AA2]"
                             placeholder="your@email.com"
-                            style="border-color: #FF9AA2;" 
-                            onfocus="this.style.borderColor='#FF6F91'; this.style.boxShadow='0 0 0 3px rgba(255, 106, 145, 0.1)';"
-                            onblur="this.style.borderColor='#FF9AA2'; this.style.boxShadow='';"
                         />
                     </div>
                     <div>
