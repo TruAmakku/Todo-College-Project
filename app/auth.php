@@ -91,12 +91,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 <body class="min-h-screen bg-gray-50 flex items-center justify-center p-4">
     <div class="w-full max-w-md">
         <div class="bg-white rounded-lg shadow-2xl p-8 animate-in fade-in zoom-in duration-500">
-            <!-- Header -->
             <div class="text-center mb-8">
                 <h1 class="text-4xl font-bold">
-                    <span style="color: #4A1C1C;">Mini</span><span style="color: #FF6F61;">Do</span>
+                    <span class="text-[#4A1C1C]">Mini</span><span class="text-[#FF6F61]">Do</span>
                 </h1>
-                <p style="color: #4A1C1C; margin-top: 0.5rem;">Manage your tasks efficiently</p>
+                <p class="mt-1">Manage your tasks efficiently</p>
             </div>
 
             <div class="flex gap-2 mb-8">
@@ -104,8 +103,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     type="button" 
                     onclick="showLogin()" 
                     id="loginBtn"
-                    class="flex-1 py-2 px-4 text-white font-semibold rounded-lg transition-colors"
-                    style="background-color: #FF6F61;"
+                    class="flex-1 py-2 px-4 text-white font-semibold rounded-lg transition-colors bg-[#FF6F61]"
+                    
                 >
                     Login
                 </button>
@@ -113,8 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     type="button" 
                     onclick="showSignup()" 
                     id="signupBtn"
-                    class="flex-1 py-2 px-4 text-gray-800 font-semibold rounded-lg transition-colors"
-                    style="background-color: #FFD1CC; color: #4A1C1C;"
+                    class="flex-1 py-2 px-4 text-gray-800 font-semibold rounded-lg transition-colors text-[#4A1C1C] bg-[#FFD1CC]"
                 >
                     Sign Up
                 </button>
@@ -122,13 +120,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
             <div id="loginSection" class="animate-in fade-in duration-300">
                 <?php if ($login_error): ?>
-                    <div class="mb-4 p-3 rounded-lg border" style="background-color: #FFB7B2; color: #4A1C1C; border-color: #FF9AA2;">
+                    <div class="mb-4 p-3 rounded-lg border text-[#4A1C1C] bg-[#FFB7B2] border-[#FF9AA2]">
                         <?php echo htmlspecialchars($login_error); ?>
                     </div>
                 <?php endif; ?>
                 <form method="POST" class="space-y-4">
                     <div>
-                        <label class="block font-semibold mb-2" style="color: #4A1C1C;">Email</label>
+                        <label class="block font-semibold mb-2 text-[#4A1C1C]">Email</label>
                         <input 
                             type="email" 
                             name="email" 
@@ -141,25 +139,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                         />
                     </div>
                     <div>
-                        <label class="block font-semibold mb-2" style="color: #4A1C1C;">Password</label>
+                        <label class="block font-semibold mb-2 text-[#4A1C1C]">Password</label>
                         <input 
                             type="password" 
                             name="password" 
                             required 
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                            class="w-full px-4 py-2 rounded-lg border
+                                    border-[#FF9AA2]
+                                    focus:outline-none
+                                    focus:border-[#FF6F91]
+                                    focus:ring-2
+                                    focus:ring-[#FF6F91]/20 border-[#FF9AA2]"
                             placeholder="Enter your password"
-                            style="border-color: #FF9AA2;" 
-                            onfocus="this.style.borderColor='#FF6F91'; this.style.boxShadow='0 0 0 3px rgba(255, 106, 145, 0.1)';"
-                            onblur="this.style.borderColor='#FF9AA2'; this.style.boxShadow='';"
                         />
                     </div>
                     <button 
                         type="submit" 
                         name="login"
-                        class="w-full py-2 px-4 text-white font-semibold rounded-lg transition-colors mt-6"
-                        style="background-color: #FF6F61;"
-                        onmouseover="this.style.backgroundColor='#FF4D6D';"
-                        onmouseout="this.style.backgroundColor='#FF6F61';"
+                        class="w-full px-4 py-2 rounded-lg border
+                                border-[#FF9AA2]
+                                bg-[#FF6F61]
+                                text-white
+                                hover:opacity-70
+                                active:opacity-90"
                     >
                         Login
                     </button>
@@ -168,90 +170,102 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
             <div id="signupSection" class="animate-in fade-in duration-300 hidden">
                 <?php if ($signup_error): ?>
-                    <div class="mb-4 p-3 rounded-lg border" style="background-color: #FFB7B2; color: #4A1C1C; border-color: #FF9AA2;">
+                    <div class="mb-4 p-3 rounded-lg border bg-[#FFB7B2] text-[#4A1C1C] border-[#FF9AA2]">
                         <?php echo htmlspecialchars($signup_error); ?>
                     </div>
                 <?php endif; ?>
                 <?php if ($signup_success): ?>
-                    <div class="mb-4 p-3 rounded-lg border" style="background-color: #FFB7B2; color: #4A1C1C; border-color: #FF9AA2;">
+                    <div class="mb-4 p-3 rounded-lg border bg-[#FFB7B2] text-[#4A1C1C] border-[#FF9AA2]">
                         <?php echo htmlspecialchars($signup_success); ?>
                     </div>
                 <?php endif; ?>
                 <form method="POST" class="space-y-4">
                     <div class="grid grid-cols-2 gap-3">
                         <div>
-                            <label class="block font-semibold mb-2" style="color: #4A1C1C;">First Name</label>
+                            <label class="block font-semibold mb-2 text-[#4A1C1C]">First Name</label>
                             <input 
                                 type="text" 
                                 name="firstname" 
                                 required 
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
-                                placeholder="John"
-                                style="border-color: #FF9AA2;" 
-                                onfocus="this.style.borderColor='#FF6F91'; this.style.boxShadow='0 0 0 3px rgba(255, 106, 145, 0.1)';"
-                                onblur="this.style.borderColor='#FF9AA2'; this.style.boxShadow='';"
+                                class="w-full px-4 py-2 rounded-lg border
+                                    border-[#FF9AA2]
+                                    focus:outline-none
+                                    focus:border-[#FF6F91]
+                                    focus:ring-2
+                                    focus:ring-[#FF6F91]/20 border-[#FF9AA2]"
+                                placeholder="ex: Ahmed"
                             />
                         </div>
                         <div>
-                            <label class="block font-semibold mb-2" style="color: #4A1C1C;">Last Name</label>
+                            <label class="block font-semibold mb-2 text-[#4A1C1C]">Last Name</label>
                             <input 
                                 type="text" 
                                 name="lastname" 
                                 required 
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
-                                placeholder="Doe"
-                                style="border-color: #FF9AA2;" 
-                                onfocus="this.style.borderColor='#FF6F91'; this.style.boxShadow='0 0 0 3px rgba(255, 106, 145, 0.1)';"
-                                onblur="this.style.borderColor='#FF9AA2'; this.style.boxShadow='';"
+                                class="w-full px-4 py-2 rounded-lg border
+                                    border-[#FF9AA2]
+                                    focus:outline-none
+                                    focus:border-[#FF6F91]
+                                    focus:ring-2
+                                    focus:ring-[#FF6F91]/20 border-[#FF9AA2]"
+                                placeholder="ex: Eldawody"
                             />
                         </div>
                     </div>
                     <div>
-                        <label class="block font-semibold mb-2" style="color: #4A1C1C;">Email</label>
+                        <label class="block font-semibold mb-2 text-[#4A1C1C]">Email</label>
                         <input 
                             type="email" 
                             name="email" 
                             required 
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                            class="w-full px-4 py-2 rounded-lg border
+                                    border-[#FF9AA2]
+                                    focus:outline-none
+                                    focus:border-[#FF6F91]
+                                    focus:ring-2
+                                    focus:ring-[#FF6F91]/20 border-[#FF9AA2]"
                             placeholder="your@email.com"
-                            style="border-color: #FF9AA2;" 
-                            onfocus="this.style.borderColor='#FF6F91'; this.style.boxShadow='0 0 0 3px rgba(255, 106, 145, 0.1)';"
-                            onblur="this.style.borderColor='#FF9AA2'; this.style.boxShadow='';"
                         />
                     </div>
                     <div>
-                        <label class="block font-semibold mb-2" style="color: #4A1C1C;">Password</label>
+                        <label class="block font-semibold mb-2 text-[#4A1C1C]">Password</label>
                         <input 
                             type="password" 
                             name="password" 
                             required 
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                            class="w-full px-4 py-2 rounded-lg border
+                                    border-[#FF9AA2]
+                                    focus:outline-none
+                                    focus:border-[#FF6F91]
+                                    focus:ring-2
+                                    focus:ring-[#FF6F91]/20 border-[#FF9AA2]"
                             placeholder="At least 6 characters"
-                            style="border-color: #FF9AA2;" 
-                            onfocus="this.style.borderColor='#FF6F91'; this.style.boxShadow='0 0 0 3px rgba(255, 106, 145, 0.1)';"
-                            onblur="this.style.borderColor='#FF9AA2'; this.style.boxShadow='';"
                         />
                     </div>
                     <div>
-                        <label class="block font-semibold mb-2" style="color: #4A1C1C;">Confirm Password</label>
+                        <label class="block font-semibold mb-2 text-[#4A1C1C]">Confirm Password</label>
                         <input 
                             type="password" 
                             name="confirm_password" 
                             required 
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                            class="w-full px-4 py-2 rounded-lg border
+                                    border-[#FF9AA2]
+                                    focus:outline-none
+                                    focus:border-[#FF6F91]
+                                    focus:ring-2
+                                    focus:ring-[#FF6F91]/20 border-[#FF9AA2]"
                             placeholder="Confirm your password"
-                            style="border-color: #FF9AA2;" 
-                            onfocus="this.style.borderColor='#FF6F91'; this.style.boxShadow='0 0 0 3px rgba(255, 106, 145, 0.1)';"
-                            onblur="this.style.borderColor='#FF9AA2'; this.style.boxShadow='';"
                         />
                     </div>
                     <button 
                         type="submit" 
                         name="register"
-                        class="w-full py-2 px-4 text-white font-semibold rounded-lg transition-colors mt-6"
-                        style="background-color: #FF6F61;"
-                        onmouseover="this.style.backgroundColor='#FF4D6D';"
-                        onmouseout="this.style.backgroundColor='#FF6F61';"
+                        class="w-full px-4 py-2 rounded-lg border
+                                border-[#FF9AA2]
+                                bg-[#FF6F61]
+                                text-white
+                                hover:opacity-70
+                                active:opacity-90"
                     >
                         Sign Up
                     </button>

@@ -14,25 +14,24 @@ if (isset($_SESSION['user_id'])) {
     <title>MiniDo - Your Minimalistic Todo List</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="min-h-screen" style="background-color: #FF6F61;">
-    <main class="min-h-screen flex flex-col items-center justify-center gap-3 text-white animate-in fade-in zoom-in duration-500">
+<body class="min-h-screen bg-[#FF6F61]">
+    <main class="min-h-screen flex flex-col items-center justify-center gap-3 text-white">
         <h1 class="text-7xl font-medium text-center">
             Welcome to
             <span class="font-bold">
-                Mini<span class="text-white" style="opacity: 0.9;">Do</span>
+                MiniDo
             </span>
         </h1>
         <p class="text-3xl font-medium text-center">
             Your Minimalistic & Reliable To do list - Task manager.
         </p>
-        <a 
-            href="auth.php" 
-            class="text-2xl px-8 py-4 rounded-lg mt-5 transition-all cursor-pointer font-semibold" 
-            style="background-color: #FFFFFF; color: #FF6F61;"
-            onmouseover="this.style.backgroundColor='#FFB7B2'; this.style.color='#FF6F61';"
-            onmouseout="this.style.backgroundColor='#FFFFFF';"
-        >
-            Get Started
+        <a
+          href="auth.php"
+          class="mt-5 inline-block px-8 py-4 text-2xl font-semibold rounded-lg
+                 bg-white text-[#FF6F61]
+                 transition-all duration-300
+                 hover:bg-[#FFB7B2] hover:text-[#FF6F61]">
+             Get Started
         </a>
     </main>
 </body>
