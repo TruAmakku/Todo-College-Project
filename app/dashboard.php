@@ -78,8 +78,6 @@ foreach ($tasks as $task) {
 
 <body class="min-h-screen bg-[#FFD1CC]" onload="document.body.classList.add('loaded')">
 <div class="flex h-screen gap-4 p-4">
-
-    <!-- Sidebar -->
     <div class="w-80 flex flex-col p-6 rounded-lg shadow-lg text-white bg-[#FF6F61]">
 
         <div class="mb-8">
@@ -114,11 +112,7 @@ foreach ($tasks as $task) {
             Logout
         </a>
     </div>
-
-    <!-- Main -->
     <div class="flex-1 flex flex-col">
-
-        <!-- Header -->
         <div class="mb-6 p-6 bg-white rounded-lg shadow-lg">
             <div class="flex justify-between items-start text-[#4A1C1C]">
                 <div>
@@ -131,8 +125,6 @@ foreach ($tasks as $task) {
                 </div>
             </div>
         </div>
-
-        <!-- Add task -->
         <div class="mb-6 p-6 bg-white rounded-lg shadow-lg">
             <?php if ($add_error): ?>
                 <div class="mb-4 p-3 rounded-lg bg-[#FFB7B2] text-[#4A1C1C]">
@@ -166,8 +158,6 @@ foreach ($tasks as $task) {
                 </button>
             </form>
         </div>
-
-        <!-- Task list -->
         <div class="flex-1 overflow-y-auto p-6 bg-white rounded-lg shadow-lg">
             <?php if (empty($tasks)): ?>
                 <div class="h-full flex items-center justify-center text-gray-400">
