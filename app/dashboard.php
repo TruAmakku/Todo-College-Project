@@ -100,8 +100,7 @@ foreach ($tasks as $task) {
                 </div>
             </div>
 
-            <!-- Logout -->
-            <a 
+               <a 
                 href="logout.php"
                 class="mt-auto py-2 px-4 font-semibold rounded-lg text-center transition-colors"
                 style="background-color: #FFFFFF; color: #FF6F61;"
@@ -112,9 +111,9 @@ foreach ($tasks as $task) {
             </a>
         </div>
 
-        <!-- Main Content -->
         <div class="flex-1 flex flex-col">
-         div class="flex-1 flex flex-col"="flex justify-between items-start">
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <div class="flex justify-between items-start">
                     <div>
                         <h2 class="text-3xl font-bold mb-2" style="color: #4A1C1C;">My Tasks</h2>
                         <p style="color: #4A1C1C;">
@@ -128,13 +127,12 @@ foreach ($tasks as $task) {
                 </div>
             </div>
 
-            <!-- Add Task Form -->
             <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
                 <?php if ($add_error): ?>
                     <div class="mb-4 p-3 rounded-lg" style="background-color: #FFB7B2; color: #4A1C1C;">
+                        <?php echo htmlspecialchars($add_error); ?>
                     </div>
                 <?php endif; ?>
-                
                 <form method="POST" class="flex gap-2">
                     <input 
                         type="text" 
@@ -163,7 +161,6 @@ foreach ($tasks as $task) {
                 </form>
             </div>
 
-            <!-- Tasks List -->
             <div class="flex-1 overflow-y-auto bg-white rounded-lg shadow-lg p-6">
                 <?php if (empty($tasks)): ?>
                     <div class="flex flex-col items-center justify-center h-full text-gray-400">
@@ -214,7 +211,7 @@ foreach ($tasks as $task) {
         </ul>
     <?php endif; ?>
 </div>
-</div>
+</div>  
 </div>
 </body>
 </html>
